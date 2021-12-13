@@ -10,7 +10,7 @@ test('DialogContent が開閉できること', async (t) => {
   const trigger = Selector('[data-test=dialog-trigger]')
   const content = Selector('[data-test=dialog-content]')
   const closer = Selector('[data-test=dialog-closer]')
-  const background = content.parent('[role=dialog]').find('.smarthr-ui-Dialog-background')
+  const background = Selector('#dialog-uncontrolled').find('.smarthr-ui-Dialog-background')
 
   await t
     .click(trigger)
@@ -35,7 +35,7 @@ test('MessageDialogContent が開閉できること', async (t) => {
   const trigger = Selector('[data-test=message-dialog-trigger]')
   const content = Selector('[data-test=message-dialog-content]')
   const closer = content.find('.smarthr-ui-Dialog-closeButton')
-  const background = content.parent('[role=dialog]').find('.smarthr-ui-Dialog-background')
+  const background = Selector('#dialog-uncontrolled-message').find('.smarthr-ui-Dialog-background')
 
   await t
     .click(trigger)
@@ -60,7 +60,7 @@ test('ActionDialogContent が開閉できること', async (t) => {
   const trigger = Selector('[data-test=action-dialog-trigger]')
   const content = Selector('[data-test=action-dialog-content]')
   const closer = content.find('.smarthr-ui-Dialog-closeButton')
-  const background = content.parent('[role=dialog]').find('.smarthr-ui-Dialog-background')
+  const background = Selector('#dialog-uncontrolled-action').find('.smarthr-ui-Dialog-background')
 
   await t
     .click(trigger)
